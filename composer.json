@@ -66,26 +66,28 @@
     },
     "autoload": {
         "classmap": [
-          "scripts/composer/ScriptHandler.php"
+            "scripts/composer/ScriptHandler.php"
         ]
     },
     "scripts": {
-        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+        "drupal-scaffold": [
+            "@composer drupal:scaffold"
+        ],
         "pre-install-cmd": [
-          "PageDesignerProject\\composer\\ScriptHandler::checkComposerVersion"
+            "drupal_default\\composer\\ScriptHandler::checkComposerVersion"
         ],
         "pre-update-cmd": [
-          "PageDesignerProject\\composer\\ScriptHandler::checkComposerVersion"
+            "drupal_default\\composer\\ScriptHandler::checkComposerVersion"
         ],
         "post-install-cmd": [
-          "PageDesignerProject\\composer\\ScriptHandler::createRequiredFiles",
-          "PageDesignerProject\\composer\\ScriptHandler::removeGitDirectories",
-          "@composer drupal-scaffold"
+            "drupal_default\\composer\\ScriptHandler::createRequiredFiles",
+            "drupal_default\\composer\\ScriptHandler::removeGitDirectories",
+            "@composer drupal:scaffold"
         ],
         "post-update-cmd": [
-          "PageDesignerProject\\composer\\ScriptHandler::createRequiredFiles",
-          "PageDesignerProject\\composer\\ScriptHandler::removeGitDirectories",
-          "@composer drupal-scaffold"
+            "drupal_default\\composer\\ScriptHandler::createRequiredFiles",
+            "drupal_default\\composer\\ScriptHandler::removeGitDirectories",
+            "@composer drupal:scaffold"
         ]
     },
     "extra": {
