@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \PageDesignerProject\composer\ScriptHandler.
+ * Contains \drupal_default\composer\ScriptHandler.
  */
 
-namespace PageDesignerProject\composer;
+namespace drupal_default\composer;
 
 use Composer\Script\Event;
 use Composer\Semver\Comparator;
