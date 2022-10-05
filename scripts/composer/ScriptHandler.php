@@ -9,6 +9,7 @@ namespace drupal_default\composer;
 
 use Composer\Script\Event;
 use Composer\Semver\Comparator;
+use Drupal\Core\Site\Settings;
 use DrupalFinder\DrupalFinder;
 use Symfony\Component\Filesystem\Filesystem;
 use Webmozart\PathUtil\Path;
@@ -58,7 +59,7 @@ class ScriptHandler {
       $event->getIO()->write("Created a sites/default/files directory with chmod 0777");
     }
   }
-  
+
   /**
    * Checks if the installed version of Composer is compatible.
    *
